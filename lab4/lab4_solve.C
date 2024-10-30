@@ -1,9 +1,16 @@
 /* the program copies a whole tree from a given path in argv[1] into argv[2]
  *
  * made it work for:
- * dirs
- * files
- * symlinks
+ *
+DT_REG: Regular file
+DT_DIR: Directory
+DT_LNK: Symbolic link
+DT_FIFO: FIFO (named pipe)
+DT_SOCK: Socket
+DT_CHR: Character device
+DT_BLK: Block device
+DT_UNKNOWN: Unknown type
+
  *
  * */
 
