@@ -5,6 +5,9 @@
 DT_REG: Regular file
 DT_DIR: Directory
 DT_LNK: Symbolic link
+
+and added handle for:
+
 DT_FIFO: FIFO (named pipe)
 DT_SOCK: Socket
 DT_CHR: Character device
