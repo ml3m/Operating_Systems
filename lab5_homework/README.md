@@ -29,7 +29,7 @@ make
 Running the Program After building the program, you can run it using:
 
 ```bash 
-./process_tree
+./tree_pid
 ```
 - The program will print the PID and PPID of each
 process in the hierarchy.
