@@ -10,11 +10,12 @@ labs, or homework assignments completed throughout the course.
 
 Below is a brief overview of the contents of the repository:
 
-- **`lab2.1`**: Contains the code and documentation for Lab 2.1.
-- **`lab2.2`**: Contains the code and documentation for Lab 2.2.
-- **`lab4`**: This directory includes Lab 4 materials, including any exercises,
+- **[Lab 2.1 Homework](lab2.1)**: Contains the code and documentation for Lab 2.1.
+- **[lab 2.2 Homework](lab2.2)**: Contains the code and documentation for Lab 2.2.
+- **[lab 4 Homwork](lab4)**: This directory includes Lab 4 materials, including any exercises,
   scripts, or related files.
-- **`lab5_homework`**: Contains homework and supporting files for Lab 5.
+- **[lab 5 homework](lab5_homework)**: Contains homework and supporting files for Lab 5.
+
 
 ## How to Use This Repository
 
