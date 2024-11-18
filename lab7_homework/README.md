@@ -1,6 +1,4 @@
-### Updated `README.md` to Reflect Requirements
-
-```markdown # String Processor with Pipes and Forks
+# String Processor with Pipes and Forks
 
 This program is a C application that demonstrates inter-process communication
 using pipes and forks. It processes the content of a file, reverses the string,
