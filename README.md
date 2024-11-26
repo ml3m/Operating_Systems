@@ -15,6 +15,7 @@ Below is a brief overview of the contents of the repository:
 - **[lab 4 Homwork](lab4)**: This directory includes Lab 4 materials, including any exercises,
   scripts, or related files.
 - **[lab 5 Homework](lab5_homework)**: Contains homework and supporting files for Lab 5.
+- **[lab 7 Homework](lab7_homework)**: Contains homework and supporting files for Lab 7.
 
 
 ## How to Use This Repository
