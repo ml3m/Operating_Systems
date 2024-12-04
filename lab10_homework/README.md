@@ -1,7 +1,7 @@
 # OS Lab 10 - Homework
 
-[Exercise 1](exercise_one)
-[Exercise 2](exercise_two)
+- [Exercise 1](exercise_one)
+- [Exercise 2](exercise_two)
 
 ## Exercise 1: Subprocess Signal Handling
 
