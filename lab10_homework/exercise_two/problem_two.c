@@ -1,12 +1,19 @@
 /*
-2. Create a C application that switches between executing two processes.The
-parent will start both processes at once but will allow only the first
-subprocess to run for a number of N seconds. After that, the process will be put
-on hold (wait), and the second subprocess run for a number of N seconds. Then
-the parent process will stop the second process and resume the first one. Each
-process switch will be accompanied by a message (e.g.: "Process x was put on
-hold, Process y started"). This cycle will be done until the parent receives the
-SIGUSR1 signal.
+ *
+2. Create a C application that switches between executing two processes.
+
+The parent will start both processes at once but will allow only the first subprocess 
+to run for a number of N seconds. 
+
+After that, the process will be put
+on hold (wait), and the second subprocess run for a number of N seconds. 
+
+Then the parent process will stop the second process and resume the first one. 
+
+Each process switch will be accompanied by a message 
+(e.g.: "Process x was put on hold, Process y started"). 
+This cycle will be done until the parent receives the SIGUSR1 signal.
+ *
  *
  */
 #include <stdio.h>
@@ -18,19 +25,18 @@ SIGUSR1 signal.
 
 volatile sig_atomic_t stop_switching = 0;
 
-void sigusr1_handler(int signum) {
+void sigusr1_handler() {
     stop_switching = 1;
 }
 
 int main(int argc, char *argv[]) {
-    // Check for correct number of arguments
     if (argc != 3) {
         fprintf(stderr, "Usage: %s <N_seconds> <num_cycles>\n", argv[0]);
         exit(1);
     }
-
     int N = atoi(argv[1]);
     int num_cycles = atoi(argv[2]);
+
 
     // ignore SIGUSR1
     signal(SIGUSR1, SIG_IGN);
@@ -60,7 +66,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (pid2 == 0) {
-        // Second child process
+        // 2
         while (!stop_switching) {
             printf("Second process running\n");
             sleep(1);
@@ -68,16 +74,15 @@ int main(int argc, char *argv[]) {
         exit(0);
     }
 
-    // Parent process
     int cycle_count = 0;
     while (cycle_count < num_cycles && !stop_switching) {
-        // Run first process
+        // 1
         printf("Process 1 started, Process 2 on hold\n");
         kill(pid2, SIGSTOP);
         kill(pid1, SIGCONT);
         sleep(N);
 
-        // Run second process
+        // 2
         printf("Process 2 started, Process 1 on hold\n");
         kill(pid1, SIGSTOP);
         kill(pid2, SIGCONT);
@@ -86,11 +91,10 @@ int main(int argc, char *argv[]) {
         cycle_count++;
     }
 
-    // Cleanup
     kill(pid1, SIGKILL);
     kill(pid2, SIGKILL);
 
-    // Wait for child processes
+
     waitpid(pid1, NULL, 0);
     waitpid(pid2, NULL, 0);
 
